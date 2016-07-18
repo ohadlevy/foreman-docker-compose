@@ -41,7 +41,7 @@ services:
       - haproxy
   foreman-init:
     build: foreman
-    command: bundle exec rake db:migrate db:seed assets:clean assets:precompile apipie:cache:index
+    command: bundle exec rake db:migrate db:seed assets:clean assets:precompile apipie:cache:index gettext:po_to_json
     volumes:
       - ./assets:/usr/src/app/public/assets
     depends_on:
